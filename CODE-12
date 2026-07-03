@@ -1,0 +1,35 @@
+FRIEND FUNCTION 
+#include <iostream>
+using namespace std;
+
+class Number
+{
+private:
+    int num;
+
+public:
+    void getData()
+    {
+        cout << "Enter a number: ";
+        cin >> num;
+    }
+
+    friend void show(Number);
+};
+
+void show(Number n)
+{
+    cout << "The number is: " << n.num << endl;
+}
+
+int main()
+{
+    Number obj;
+    obj.getData();
+    show(obj);
+
+    return 0;
+}
+OUTPUT
+Enter a number: 25
+The number is: 25
